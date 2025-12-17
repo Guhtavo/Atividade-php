@@ -56,20 +56,19 @@ $valorCompra = 500.00;
 $desconto = 0.10;
 $imposto = 0.08;
 
-echo "Valor da compra é de: R$ $valorCompra <br>";
-echo "Desconto: $desconto <br>";
-echo "imposto:R$ $imposto <br>";
+echo "Valor da compra: $valorCompra <br>";
+$valorImposto = $valorCompra * $imposto;
 
-$sobtotal = ($valorCompra *(1- $desconto)) + $imposto;
-$semDesconto = ($valorCompra) + $imposto;
-
-    if($valorCompra < 500){
-        echo "$semDesconto valor de desconto";
+if($valorCompra < 500){
+        $valorDesconto = $valorCompra * $desconto;
+        $valorFinal = ($valorCompra - $valorDesconto) + $valorImposto;
     }
     else {
-        echo "$sobtotal de 10% aplicado";
+      $valorFinal = $valorCompra = $valorImposto;
+      echo "Sem desconto aplicado <br>";
     }
-
+echo "Imposto (8%): R$ $valorImposto <br>";
+echo "<strong> Valor final:$"
 
 
  
